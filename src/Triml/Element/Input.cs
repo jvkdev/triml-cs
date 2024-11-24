@@ -10,9 +10,6 @@ namespace Triml.Element
     [XmlRoot("input")]
 	public class Input : TrimlElement
 	{
-		[XmlAttribute("label")]
-		public string Label { get; set; }
-
 		[XmlAttribute("options")]
 		public string Options { get; set; }
 

@@ -24,6 +24,7 @@ namespace Triml.Json
 				case "input": node = new Input(); break;
 				case "option": node = new Option(); break;
 				case "scope": node = new Scope(); break;
+				case "shape": node = new Shape(); break;
 				case "group": node = new Group(); break;
 				case "table": node = new Table(); break;
 			}

@@ -20,8 +20,14 @@ namespace Triml
 		[XmlAttribute("name")]
 		public string Name { get; set; }
 
+		[XmlAttribute("label")]
+		public string Label { get; set; }
+
 		[XmlAttribute("condition")]
 		public string Condition { get; set; }
+
+		[XmlAttribute("source")]
+		public string Source { get; set; }
 
 		[XmlElement("triml", typeof(TrimlDocument))]		
 		[XmlElement("model", typeof(Model))]
@@ -33,6 +39,8 @@ namespace Triml
 		[XmlElement("table", typeof(Table))]
         public List<TrimlElement> ChildElements { get; set; } = new List<TrimlElement>();
 
+        [XmlText]
+        public string InnerText { get; set; }
 
 
         public virtual TrimlJsonNode ToJsonRecursive()

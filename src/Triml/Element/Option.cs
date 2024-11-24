@@ -11,8 +11,5 @@ namespace Triml.Element
 	{
 		[XmlAttribute("value")]
 		public string Value { get; set; }
-
-		[XmlAttribute("label")]
-		public string Label { get; set; }
 	}
 }
