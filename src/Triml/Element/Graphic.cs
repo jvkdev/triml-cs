@@ -5,8 +5,10 @@ using System.Xml.Serialization;
 
 namespace Triml.Element
 {
-	[XmlRoot("group")]
-	public class Group : TrimlElement
+	[XmlRoot("graphic")]
+	public class Graphic : TrimlNode
 	{
+		[XmlAttribute("style")]
+		public string Style { get; set; }
 	}
 }

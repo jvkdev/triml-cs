@@ -11,22 +11,20 @@ namespace Triml.Json
 
 		public TrimlJsonProperty[] Properties { get; set; }
 
-		public TrimlJsonNode[] ChildNodes { get; set; }
+		public TrimlJsonNode[] Nodes { get; set; }
 
 
-		public TrimlElement ToTrimlRecursive()
+		public TrimlNode ToTrimlRecursive()
 		{
-			TrimlElement node;
+			TrimlNode node;
 			switch ((NodeType ?? "").ToLower())
-			{
-				default:
+			{				
 				case "model": node = new Model(); break;
 				case "input": node = new Input(); break;
 				case "option": node = new Option(); break;
-				case "scope": node = new Scope(); break;
-				case "shape": node = new Shape(); break;
-				case "group": node = new Group(); break;
-				case "table": node = new Table(); break;
+				case "graphic": node = new Graphic(); break;
+				case "data": node = new Data(); break;
+				default: node = new TrimlNode(); break;
 			}
 
 			Dictionary<string, string> propLookup = new Dictionary<string, string>();
@@ -51,12 +49,12 @@ namespace Triml.Json
 				}
 			}
 
-			foreach (var jsonChild in ChildNodes)
+			foreach (var n in Nodes)
 			{
-				var trimlChild = jsonChild.ToTrimlRecursive();
+				var trimlChild = n.ToTrimlRecursive();
 				if (trimlChild != null)
 				{
-					node.ChildElements.Add(trimlChild);
+					node.Nodes.Add(trimlChild);
 				}
 			}
 

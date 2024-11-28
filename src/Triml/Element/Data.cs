@@ -5,9 +5,9 @@ using System.Xml.Serialization;
 
 namespace Triml.Element
 {
-    [XmlRoot("scope")]
-	public class Scope : TrimlElement
+    [XmlRoot("data")]
+	public class Data : TrimlNode
 	{
-
+		
 	}
 }

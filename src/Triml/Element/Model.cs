@@ -6,11 +6,8 @@ using System.Xml.Serialization;
 namespace Triml.Element
 {
     [XmlRoot("model")]
-	public class Model : TrimlElement
+	public class Model : TrimlNode
 	{
-		public void AddSet(string name, params string[] values)
-		{
-			ChildElements.Add(new Input(name, values));
-		}
+
 	}
 }

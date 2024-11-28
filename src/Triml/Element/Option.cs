@@ -7,9 +7,8 @@ using System.Xml.Serialization;
 namespace Triml.Element
 {
     [XmlRoot("option")]
-	public class Option : TrimlElement
+	public class Option : Data
 	{
-		[XmlAttribute("value")]
-		public string Value { get; set; }
+
 	}
 }
